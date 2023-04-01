@@ -2,16 +2,12 @@ import House from '../models/House';
 import User from '../models/User';
 
 class HouseController{
-
-
     async index(req,res){
-
         // pega o parametro la do query e armazena na variavel status
         const { status } = req.query;
         
         // Busca no banco House tudo que o status for o que esta na variavel status.
         const houses = await House.find({ status });
-
         return res.json(houses);
     }
 
