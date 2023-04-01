@@ -14,13 +14,18 @@ class SessionController {
 
   async index(req,res){
 
-    const session = await User();
+    const session = await User.find();
 
-    return res.json(session.id);
+    return res.json(session);
   }
 
   async destroy(req,res){
-    return res.json({msg: "Tudo certo até aqui!"});
+
+    const { session_id } = req.headers;
+
+    await User.findByIdAndDelete({ _id: session_id });
+
+    return res.send();
   }
 
   async store(req, res) {
