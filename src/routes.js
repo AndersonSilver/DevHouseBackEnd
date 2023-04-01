@@ -11,6 +11,8 @@ const routes = new Router();
 const upload = multer(uploadConfig);
 
 routes.post('/sessions', SessionController.store);
+routes.get('/sessions', SessionController.index);
+routes.delete('/sessions', SessionController.destroy);
 
 routes.post('/houses', upload.single('thumbnail'), HouserController.store);
 routes.get('/houses', HouserController.index);

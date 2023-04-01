@@ -11,6 +11,18 @@ import * as Yup from 'yup';
 import User from '../models/User';
 
 class SessionController {
+
+  async index(req,res){
+
+    const session = await User();
+
+    return res.json(session.id);
+  }
+
+  async destroy(req,res){
+    return res.json({msg: "Tudo certo até aqui!"});
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       email: Yup.string().email().required(),
