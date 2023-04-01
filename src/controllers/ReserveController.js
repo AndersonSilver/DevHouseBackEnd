@@ -66,7 +66,7 @@ class ReserveController{
 
     async destroy(req,res){
 
-        const { reserve_id } = req.body;
+        const {reserve_id} = req.headers;
 
         await Reserve.findByIdAndDelete({ _id: reserve_id });
 

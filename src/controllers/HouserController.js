@@ -1,5 +1,6 @@
 import House from '../models/House';
 import User from '../models/User';
+import * as Yup from 'yup';
 
 class HouseController{
     async index(req,res){
@@ -13,9 +14,23 @@ class HouseController{
 
     async store(req,res){
 
+        const schema = Yup.object().shape({
+
+            description: Yup.string().required(),
+            price: Yup.number().required(),
+            location: Yup.string().required(),
+            status: Yup.boolean().required(),
+        });
+
+
         const { fileName } = req.file;
         const { description, price, location, status } = req.body;
         const { user_id } = req.headers;
+
+
+        if(!(await schema.isValid(req.body))){
+            return res.status(400).json({msg: "Falha na validação."})
+        }
 
         const house = await House.create({
 
@@ -33,6 +48,14 @@ class HouseController{
 
     async update(req,res){
 
+        const schema = Yup.object().shape({
+
+            description: Yup.string().required(),
+            price: Yup.number().required(),
+            location: Yup.string().required(),
+            status: Yup.boolean().required(),
+        });
+
 
         // Declara as variaveis e puxa la do insomia as informaçoes!
         const { filename } = req.file;
@@ -40,12 +63,9 @@ class HouseController{
         const { description, price, location, status } = req.body;
         const { user_id } = req.headers;
 
-        // const user = await User.findById(user_id);
-        // const houses = await House.findById(house_id);
-
-        // if(String(user._id) !== String(houses.user)){
-        //     res.status(401).json({MSG: "Não Autorizado"});
-        // }
+        if(!(await schema.isValid(req.body))){
+            return res.status(400).json({msg: "Falha na validação."})
+        }
 
         //Busca no banco House o cadastro com o ID que o usuario passou como parametro que foi salva na variavel house_id
         await House.updateOne({_id: house_id},{
