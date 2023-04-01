@@ -1,0 +1,25 @@
+{
+      //EsLint Config
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autofix": true
+    },
+    {
+      "language": "typescript",
+      "autofix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autofix": true
+    },
+],
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+},
+}
