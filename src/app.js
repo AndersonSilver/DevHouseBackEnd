@@ -2,6 +2,7 @@ import express from 'express'; // importando o express
 import mongoose from 'mongoose';// importando o mongoose para utilizar banco de dados
 import routes from './routes';//importando as rotas
 import path from 'path';
+import cors from 'cors';
 
 class app{
     constructor(){
@@ -15,6 +16,8 @@ class app{
         this.routes();
     }
     middlewares(){
+
+        this.server.use(cors());
         this.server.use(
             '/files',
             express.static(path.resolve(__dirname, '..', 'uploads'))
