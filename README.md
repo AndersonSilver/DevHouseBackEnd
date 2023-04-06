@@ -51,6 +51,26 @@ Com isso agora vamos fazer as requisições que o projeto nos desponibiliza. Par
 
 https://dl.pstmn.io/download/latest/win64
 
+com o Postamn instalado agora será necessário baixar as rotas, com isso faça o download pelo link a seguir.
+
+https://elements.getpostman.com/redirect?entityId=25881523-015dea9d-cfe7-45f8-8b5a-f43cf51a44ec&entityType=collection
+
+<hr>
+
+# Conhecendo o Sistema
+
+Você encontrará 4 pastas, e dentro dessas pastas estão as rotas que será utilizada no projeto.
+
+![image](https://user-images.githubusercontent.com/125804426/230420896-f33d58be-cf3c-44f0-9632-b5f21d45d8c6.png)
+
+Com o projeto rodando agora é só fazer as requisiçoes de acordo com que o projeto pedi.
+
+Te desafio a ler o código de desifrar o que deve ser mandado como parametro para com que o projeto funcione perfeitamente.
+
+BOA SORTE !!!
+
+
+
 
 
 
