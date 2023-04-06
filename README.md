@@ -1,4 +1,4 @@
-# Dev House - Sistema de alugue de Casas
+# Dev House - Sistema de Aluguel de Casas
 
 :diamond_shape_with_a_dot_inside: Nesse projeto você poderá ! :punch:
 
