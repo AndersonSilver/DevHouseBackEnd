@@ -7,8 +7,6 @@
 
 :diamond_shape_with_a_dot_inside: Com isso você podera fazer as seguintes requisições ! :punch:
 
-Usuarios: 
-
 * Criar Usuario
 * Deletar Usuario
 * Buscar usuarios cadastrados
